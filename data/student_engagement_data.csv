@@ -1,0 +1,11 @@
+login_frequency,time_spent_hours,assignments_completed,quiz_score,days_inactive,dropout
+5,12,90,85,2,0
+3,8,70,65,5,0
+1,2,20,30,18,1
+2,4,40,45,12,1
+6,15,95,90,1,0
+0,1,10,20,25,1
+4,9,80,75,4,0
+2,3,35,40,15,1
+5,11,88,82,3,0
+1,2,25,35,20,1

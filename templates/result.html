@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>Analysis Complete</h1>
+            <p>Here are the risk predictions for this student</p>
+        </header>
+
+        <main>
+            <div class="glass-card result-visible" style="transform: none; opacity: 1;">
+                <h2>Risk Assessment</h2>
+                <div class="result-content" style="margin-top: 2rem;">
+                    <div class="metric">
+                        <span class="label">Dropout Probability</span>
+                        <!-- Use Jinja2 to render probability formatted as percentage -->
+                        <span class="value">{{ probability_pct }}%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Risk Category</span>
+                        <!-- Apply dynamic class based on risk_class passed from Flask -->
+                        <span class="value {{ risk_class }}">{{ risk }}</span>
+                    </div>
+                </div>
+
+                <!-- Visual Indicator Bar -->
+                <div class="prob-bar-container" style="margin-top: 2rem;">
+                    <!-- Set width and color dynamically -->
+                    <div class="prob-bar bg-{{ risk_class.split('-')[0] }}" style="width: {{ probability_pct }}%;">
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center;">
+                    <a href="{{ url_for('form') }}" style="text-decoration: none; flex: 1;">
+                        <button class="btn-predict">Analyze Another</button>
+                    </a>
+                    <a href="{{ url_for('home') }}" style="text-decoration: none; flex: 1;">
+                        <button class="btn-predict" style="background: rgba(255,255,255,0.1);">Home</button>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

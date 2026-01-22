@@ -1,0 +1,31 @@
+/* Input Fields (Manual Entry) */
+.input-field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.input-field:focus {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Remove Arrows/Spinners from Number Input (Optional, but looks cleaner) */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Insight AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Import Google Fonts: Inter for UI, DM Serif Display for headlines (matching reference) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="lp-wrapper">
+        <div class="lp-container">
+            <!-- Navigation -->
+            <nav class="lp-nav">
+                <div class="lp-logo">Student Insight</div>
+            </nav>
+
+            <!-- Main Hero Section -->
+            <main class="lp-main">
+                <div class="lp-hero-bg"></div> <!-- Background Image/Gradient Layer -->
+
+                <div class="lp-hero-content">
+                    <h1 class="lp-hero-title">Predict Student<br>Success</h1>
+                    <div class="lp-hero-sub">
+                        <span
+                            style="display:block; font-size: 0.9rem; color: #fff; margin-bottom: 0.5rem; text-transform:none; font-family: 'DM Serif Display'; font-style: italic;">
+                            Early Detection System
+                        </span>
+                        AI-POWERED INSIGHTS
+                    </div>
+
+                    <div class="lp-cta-group">
+                        <input type="text" class="lp-cta-input" placeholder="Start your analysis..." disabled
+                            style="cursor: default;">
+                        <a href="{{ url_for('form') }}">
+                            <button class="lp-cta-btn">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

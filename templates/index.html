@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dropout Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>Student Insight AI</h1>
+            <p>Predict dropout risk based on engagement metrics</p>
+        </header>
+
+        <main>
+            <div class="glass-card">
+                <form id="predictionForm">
+                    <div class="form-group">
+                        <label for="login_frequency">Login Frequency (per week)</label>
+                        <div class="range-container">
+                            <input type="range" id="login_frequency" name="login_frequency" min="0" max="10" value="3" oninput="this.nextElementSibling.value = this.value">
+                            <output>3</output>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time_spent_hours">Time Spent (hours/week)</label>
+                        <div class="range-container">
+                            <input type="range" id="time_spent_hours" name="time_spent_hours" min="0" max="20" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignments_completed">Assignments Completed (%)</label>
+                        <div class="range-container">
+                            <input type="range" id="assignments_completed" name="assignments_completed" min="0" max="100" value="50" oninput="this.nextElementSibling.value = this.value">
+                            <output>50</output>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quiz_score">Quiz Score (%)</label>
+                        <div class="range-container">
+                            <input type="range" id="quiz_score" name="quiz_score" min="0" max="100" value="50" oninput="this.nextElementSibling.value = this.value">
+                            <output>50</output>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="days_inactive">Days Inactive</label>
+                        <div class="range-container">
+                            <input type="range" id="days_inactive" name="days_inactive" min="0" max="30" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-predict">Predict Risk</button>
+                </form>
+            </div>
+
+            <div id="resultContainer" class="glass-card result-hidden">
+                <h2>Analysis Result</h2>
+                <div class="result-content">
+                    <div class="metric">
+                        <span class="label">Dropout Probability</span>
+                        <span id="probValue" class="value">--</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Risk Category</span>
+                        <span id="riskValue" class="value">--</span>
+                    </div>
+                </div>
+                <!-- Visual Indicator Bar -->
+                <div class="prob-bar-container">
+                    <div id="probBar" class="prob-bar"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Student Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>Analysis Input</h1>
+            <p>Enter student engagement metrics below</p>
+        </header>
+
+        <main>
+            <div class="glass-card">
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <div class="form-group">
+                        <label for="login_frequency">Login Frequency (per week)</label>
+                        <input type="number" id="login_frequency" name="login_frequency" min="0" max="10" value="3"
+                            class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time_spent_hours">Time Spent (hours/week)</label>
+                        <input type="number" id="time_spent_hours" name="time_spent_hours" min="0" max="20" value="5"
+                            class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignments_completed">Assignments Completed (%)</label>
+                        <input type="number" id="assignments_completed" name="assignments_completed" min="0" max="100"
+                            value="50" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quiz_score">Quiz Score (%)</label>
+                        <input type="number" id="quiz_score" name="quiz_score" min="0" max="100" value="50"
+                            class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="days_inactive">Days Inactive</label>
+                        <input type="number" id="days_inactive" name="days_inactive" min="0" max="30" value="5"
+                            class="input-field">
+                    </div>
+
+                    <button type="submit" class="btn-predict">Analyze Risk</button>
+                    <a href="{{ url_for('home') }}"
+                        style="display: block; margin-top: 1rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Back
+                        to Home</a>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
